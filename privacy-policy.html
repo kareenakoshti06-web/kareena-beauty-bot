@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy – Kareena's Beauty Picks</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --rose:       #E8A4B8;
+    --gold:       #C9A96E;
+    --cream:      #FDF6F0;
+    --deep:       #1A0A0F;
+    --muted:      #8C7B85;
+    --glass:      rgba(255,255,255,0.06);
+    --glassborder:rgba(255,255,255,0.12);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--deep);
+    color: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 4rem;
+    background: rgba(26,10,15,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glassborder);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--rose);
+    text-decoration: none;
+  }
+  .nav-links-pp {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+  }
+  .nav-links-pp a {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.3s, color 0.3s;
+  }
+  .nav-links-pp a:hover { opacity: 1; color: var(--rose); }
+  .nav-links-pp .nav-home-btn {
+    background: linear-gradient(135deg, var(--rose), var(--gold));
+    color: var(--deep) !important;
+    opacity: 1 !important;
+    padding: 0.4rem 1.1rem;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+
+  /* hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--cream); border-radius: 2px; transition: all 0.3s;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .mobile-menu-pp {
+    display: none;
+    position: fixed;
+    top: 60px; left: 0; right: 0;
+    background: rgba(26,10,15,0.97);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glassborder);
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    z-index: 99;
+  }
+  .mobile-menu-pp.open { display: flex; }
+  .mobile-menu-pp a {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.8;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--glassborder);
+    transition: color 0.3s;
+  }
+  .mobile-menu-pp a:last-child { border-bottom: none; }
+  .mobile-menu-pp a:hover { color: var(--rose); opacity: 1; }
+
+  /* ── HERO BANNER ── */
+  .pp-hero {
+    position: relative;
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+    overflow: hidden;
+  }
+  .pp-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(232,164,184,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .page-eyebrow {
+    display: inline-block;
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.5rem;
+  }
+  .pp-hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 7vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  .pp-hero h1 em { font-style: italic; color: var(--rose); }
+  .pp-hero p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.7;
+    max-width: 500px;
+    margin: 0 auto 0.5rem;
+  }
+  .last-updated {
+    font-size: 0.75rem;
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  /* ── TOC ── */
+  .toc-wrap {
+    max-width: 780px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+  }
+  .toc {
+    background: var(--glass);
+    border: 1px solid var(--glassborder);
+    border-radius: 16px;
+    padding: 1.8rem 2rem;
+    backdrop-filter: blur(10px);
+  }
+  .toc h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .toc ol {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    counter-reset: toc;
+  }
+  .toc ol li { counter-increment: toc; }
+  .toc ol li a {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.8rem;
+    color: var(--cream);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s, color 0.3s;
+    padding: 0.3rem 0;
+  }
+  .toc ol li a::before {
+    content: counter(toc, decimal-leading-zero);
+    font-size: 0.65rem;
+    color: var(--rose);
+    font-family: 'Cormorant Garamond', serif;
+    min-width: 22px;
+  }
+  .toc ol li a:hover { opacity: 1; color: var(--rose); }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1rem 2rem 6rem;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--glassborder);
+    margin: 3rem 0;
+  }
+
+  .policy-section {
+    margin-bottom: 2rem;
+    padding: 2rem;
+    background: var(--glass);
+    border: 1px solid var(--glassborder);
+    border-radius: 16px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s;
+    scroll-margin-top: 90px;
+  }
+  .policy-section:hover { border-color: rgba(232,164,184,0.3); }
+
+  .policy-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--rose);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .policy-section p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 0.8rem;
+  }
+  .policy-section p:last-child { margin-bottom: 0; }
+  .policy-section a { color: var(--rose); text-decoration: none; }
+  .policy-section a:hover { text-decoration: underline; }
+  .policy-section ul {
+    list-style: none;
+    margin-top: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .policy-section ul li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+  .policy-section ul li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: var(--rose);
+    font-size: 0.55rem;
+    top: 0.35rem;
+  }
+  .highlight-box {
+    background: rgba(232,164,184,0.07);
+    border-left: 3px solid var(--rose);
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 1.2rem;
+    margin-top: 1rem;
+    font-size: 0.83rem;
+    color: var(--cream);
+    line-height: 1.7;
+    opacity: 0.9;
+  }
+
+  /* ── CONTACT CARD ── */
+  .contact-card {
+    background: linear-gradient(135deg, rgba(232,164,184,0.1), rgba(201,169,110,0.08));
+    border: 1px solid rgba(232,164,184,0.3);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+  .contact-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+  }
+  .contact-card h3 em { font-style: italic; color: var(--rose); }
+  .contact-card p { color: var(--muted); font-size: 0.85rem; margin-bottom: 1.5rem; line-height: 1.7; }
+  .contact-email {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--rose), var(--gold));
+    color: var(--deep);
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0 30px rgba(232,164,184,0.25);
+  }
+  .contact-email:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(232,164,184,0.4); }
+
+  /* ── BACK TO TOP ── */
+  .back-top {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  .back-top a {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s;
+  }
+  .back-top a:hover { color: var(--rose); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    border-top: 1px solid var(--glassborder);
+    font-size: 0.72rem;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .footer-nav-links { display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap; }
+  .footer-nav-links a { color: var(--rose); text-decoration: none; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+  .footer-nav-links a:hover { text-decoration: underline; }
+
+  /* ── ANIMATIONS ── */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.2rem; }
+    .nav-links-pp { display: none; }
+    .hamburger { display: flex; }
+    .pp-hero { padding: 3rem 1.2rem 2rem; }
+    main { padding: 1rem 1.2rem 4rem; }
+    .toc-wrap { padding: 0 1.2rem; }
+    .toc ol { grid-template-columns: 1fr; }
+    .contact-card { padding: 1.8rem 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">Kareena's Beauty Picks</a>
+  <ul class="nav-links-pp" id="nav-links-pp">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="index.html#why">Why I Pick</a></li>
+    <li><a href="index.html#pinterest">Pinterest</a></li>
+    <li><a href="index.html" class="nav-home-btn">← Back to Site</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu-pp" id="mobile-menu-pp">
+  <a href="index.html">🏠 Home</a>
+  <a href="index.html#products">✨ Products</a>
+  <a href="index.html#why">💛 Why I Pick</a>
+  <a href="index.html#pinterest">📌 Pinterest</a>
+</div>
+
+<!-- HERO BANNER -->
+<div class="pp-hero">
+  <div class="page-eyebrow">✦ Legal · Transparency ✦</div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p>We believe in total transparency. Here's exactly how we handle your data — spoiler: we barely collect any!</p>
+  <div class="last-updated">Last updated: June 2026</div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc-wrap reveal">
+  <div class="toc">
+    <h3>📋 Jump To Section</h3>
+    <ol>
+      <li><a href="#about" onclick="smoothGo(event,'#about')">🌸 About This Website</a></li>
+      <li><a href="#collect" onclick="smoothGo(event,'#collect')">📋 Information We Collect</a></li>
+      <li><a href="#pinterest-api" onclick="smoothGo(event,'#pinterest-api')">📌 Pinterest API Usage</a></li>
+      <li><a href="#amazon" onclick="smoothGo(event,'#amazon')">🛒 Amazon Affiliate Links</a></li>
+      <li><a href="#cookies" onclick="smoothGo(event,'#cookies')">🍪 Cookies & Tracking</a></li>
+      <li><a href="#security" onclick="smoothGo(event,'#security')">🔒 Data Security</a></li>
+      <li><a href="#thirdparty" onclick="smoothGo(event,'#thirdparty')">🔗 Third Party Links</a></li>
+      <li><a href="#children" onclick="smoothGo(event,'#children')">👶 Children's Privacy</a></li>
+      <li><a href="#changes" onclick="smoothGo(event,'#changes')">📝 Policy Changes</a></li>
+      <li><a href="#contact" onclick="smoothGo(event,'#contact')">✉️ Contact Us</a></li>
+    </ol>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+  <hr class="divider">
+
+  <div class="policy-section reveal" id="about">
+    <h2>🌸 About This Website</h2>
+    <p>Kareena Beauty Bot ("we", "our", or "us") operates the website <a href="https://kareenas-beauty-picks-d8i7nfi.gamma.site/" target="_blank">kareenas-beauty-picks-d8i7nfi.gamma.site</a> and associated pages.</p>
+    <p>This Privacy Policy describes how we handle information in connection with our website, our Pinterest account (<a href="https://in.pinterest.com/templateforge04/?actingBusinessId=1136455424628081927" target="_blank">@templateforge04</a>), and our use of the Pinterest API and Amazon Associates Program.</p>
+    <div class="highlight-box">By using our website, you agree to the practices described in this Privacy Policy. If you do not agree, please discontinue use of the site.</div>
+  </div>
+
+  <div class="policy-section reveal" id="collect">
+    <h2>📋 Information We Collect</h2>
+    <p>We keep things simple — we collect as little as possible:</p>
+    <ul>
+      <li><strong style="color:var(--cream)">No personal data collected</strong> — we do not ask for your name, email, phone, or address on this website.</li>
+      <li><strong style="color:var(--cream)">No account registration</strong> — you can browse freely without creating any account.</li>
+      <li><strong style="color:var(--cream)">No forms</strong> — this website has no contact forms, surveys, or sign-up forms that collect your details.</li>
+      <li><strong style="color:var(--cream)">Automatic data</strong> — your browser may send standard technical data (IP address, browser type) to our hosting provider, which we do not access or store ourselves.</li>
+    </ul>
+  </div>
+
+  <div class="policy-section reveal" id="pinterest-api">
+    <h2>📌 Pinterest API Usage</h2>
+    <p>This website uses the Pinterest API to automate the publishing of beauty and skincare pins to our own Pinterest account <a href="https://in.pinterest.com/templateforge04/?actingBusinessId=1136455424628081927" target="_blank">@templateforge04</a>.</p>
+    <ul>
+      <li>We only post content to <strong style="color:var(--cream)">our own Pinterest account</strong> — no one else's.</li>
+      <li>We do <strong style="color:var(--cream)">not access, read, or store</strong> any Pinterest user data, follower data, or engagement data.</li>
+      <li>We do <strong style="color:var(--cream)">not request permission</strong> to view or modify other users' Pinterest accounts.</li>
+      <li>Pinterest's own <a href="https://policy.pinterest.com/en/privacy-policy" target="_blank">Privacy Policy</a> applies when you visit our Pinterest profile.</li>
+    </ul>
+    <div class="highlight-box">Our Pinterest API usage is strictly limited to posting pins on our own account. We have no access to your Pinterest data whatsoever.</div>
+  </div>
+
+  <div class="policy-section reveal" id="amazon">
+    <h2>🛒 Amazon Affiliate Links</h2>
+    <p>Kareena's Beauty Picks is a participant in the <strong style="color:var(--cream)">Amazon Associates Program</strong> — an affiliate advertising program that allows us to earn commissions by linking to Amazon.in products.</p>
+    <ul>
+      <li>When you click a product link and make a purchase, we earn a small commission at <strong style="color:var(--cream)">no extra cost to you</strong>.</li>
+      <li>Affiliate commissions help us keep this website running and continue discovering the best beauty picks.</li>
+      <li>All product recommendations are genuine — we only feature products we believe are high quality.</li>
+      <li>Amazon may use cookies to track purchases. Please review <a href="https://www.amazon.in/gp/help/customer/display.html?nodeId=468496" target="_blank">Amazon's Privacy Notice</a> for details.</li>
+    </ul>
+    <div class="highlight-box">✦ Disclosure: As an Amazon Associate, we earn from qualifying purchases. This does not affect our product recommendations.</div>
+  </div>
+
+  <div class="policy-section reveal" id="cookies">
+    <h2>🍪 Cookies & Tracking</h2>
+    <p>This website itself does not use any tracking cookies, analytics cookies, or advertising cookies.</p>
+    <ul>
+      <li><strong style="color:var(--cream)">No Google Analytics</strong> — we do not use any analytics platform to track visitor behaviour.</li>
+      <li><strong style="color:var(--cream)">No ad tracking</strong> — we do not run ads on this website and do not use ad tracking pixels.</li>
+      <li><strong style="color:var(--cream)">Third-party cookies</strong> — Amazon and Pinterest may place their own cookies when you click their links. We have no control over these.</li>
+    </ul>
+  </div>
+
+  <div class="policy-section reveal" id="security">
+    <h2>🔒 Data Security</h2>
+    <p>Since we collect virtually no personal data, your privacy risk on our website is minimal. However, we still take reasonable precautions:</p>
+    <ul>
+      <li>Our website is served over <strong style="color:var(--cream)">HTTPS</strong> to encrypt data in transit.</li>
+      <li>We do not store any passwords, payment details, or sensitive personal information.</li>
+      <li>No database of users exists — so there is nothing to breach.</li>
+    </ul>
+    <p>Please note that no method of transmission over the internet is 100% secure. If you have security concerns, please contact us.</p>
+  </div>
+
+  <div class="policy-section reveal" id="thirdparty">
+    <h2>🔗 Third Party Links</h2>
+    <p>Our website contains links to external sites including Amazon.in, Pinterest, and product brand websites. These are governed by their own privacy policies and we are not responsible for their practices.</p>
+    <ul>
+      <li>We encourage you to review the privacy policy of every website you visit.</li>
+      <li>Clicking an external link means you leave our site and enter theirs.</li>
+      <li>We have no control over third-party websites' content, security, or privacy practices.</li>
+    </ul>
+  </div>
+
+  <div class="policy-section reveal" id="children">
+    <h2>👶 Children's Privacy</h2>
+    <p>This website is intended for a general adult audience interested in beauty and skincare. We do not knowingly collect any personal information from children under the age of 13.</p>
+    <p>If you believe a child has provided us with personal information, please contact us at <a href="mailto:kareenabeautybot@gmail.com">kareenabeautybot@gmail.com</a> and we will take immediate steps to delete such information.</p>
+  </div>
+
+  <div class="policy-section reveal" id="changes">
+    <h2>📝 Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal reasons. When we do:</p>
+    <ul>
+      <li>The "Last updated" date at the top of this page will be revised.</li>
+      <li>Significant changes will be noted prominently on this page.</li>
+      <li>Continued use of our website after changes means you accept the updated policy.</li>
+    </ul>
+    <p>We recommend checking this page periodically to stay informed.</p>
+  </div>
+
+  <!-- CONTACT CARD -->
+  <div class="contact-card reveal" id="contact">
+    <h3>Got a Question? <em>Reach Out!</em></h3>
+    <p>For any questions, concerns, or requests regarding this Privacy Policy or our data practices, we'd love to hear from you. We respond within 48 hours!</p>
+    <a href="mailto:kareenabeautybot@gmail.com" class="contact-email">✉️ kareenabeautybot@gmail.com</a>
+  </div>
+
+  <div class="back-top">
+    <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to Top</a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-nav-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#why">Why I Pick</a>
+    <a href="index.html#pinterest">Pinterest</a>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </div>
+  <div>© 2026 Kareena's Beauty Picks · Amazon Affiliate · All Rights Reserved</div>
+</footer>
+
+<script>
+function smoothGo(e, target) {
+  e.preventDefault();
+  const el = document.querySelector(target);
+  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleMenu() {
+  const menu = document.getElementById('mobile-menu-pp');
+  const btn  = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 60);
+    }
+  });
+}, { threshold: 0.08 });
+reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
